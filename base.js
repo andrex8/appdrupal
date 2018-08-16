@@ -156,15 +156,19 @@ function logout() {
 	$("#footout").fadeOut();
 }
 
+//Accede a pantalla de promos de cafeterias
 function how() {
 	$.mobile.changePage("#promo");
 }
 
+//Funcion para llamar a pantalla de panaderias
 function pan(){
 	$.mobile.changePage("#pan");
 }
 
-
+function mensaje(){
+	alert("Hola");
+}
 
 function clearData() {
 	localStorage.phonegapName = "";
