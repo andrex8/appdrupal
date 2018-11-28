@@ -6,11 +6,12 @@
     <title>Xelapan App</title>
     <link rel="stylesheet" href="jquery.mobile-1.0b2.min.css" />
     <link rel="stylesheet" href="drupalgap.css" />
-
+    <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
     <script type="text/javascript" src="jquery.mobile-1.0b2.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" src="base.js"></script>
+    <script type="text/javascript" src="js/prueba.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -27,13 +28,22 @@
 
     <script src="js/firebase.js" charset="utf-8"></script>
     <script src="js/maind.js" charset="utf-8"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </head>
-  <body onload="onBodyLoad()">
+  <body onload="onBodyLoad()" class="item-align:center text-align:center" >
 
     <!-- Start of loading page -->
-    <div data-role="page" id="home">
+    <div data-role="page" id="home" class="item-align:center text-align:center">
       <div data-role="header" data-id="bhead" data-theme="e">
-        <h1>Xelapan</h1>
+        <h1 class="text-align:center">Xelapan</h1>
         <a href="#home" data-icon="home" data-direction="reverse" class="ui-btn-left jqm-home">Inicio</a>
         <a href="#info" data-icon="info" class="ui-btn-right">Información</a>
       </div>
@@ -45,14 +55,16 @@
           </p>
           <img margin="auto" src="images/logox.png" alt="" width="250">
           <p>
-            ¡Encontraras las mejores promos y te entearas antes que nadie!
+            Inicio de sesion
           </p>
           <p id="infol"></p>
           <p  id="lnombre">Ingresa tu usuario</p>
           <input id="email" type="text"></input><br>
           <p  id="lcontrasena">Ingresa tu contraseña</p>
           <input id="password" type="password"></input><br>
-          <button  id="registrar" onclick="registrar()" type="button" name="button">Registrarse</button>
+          <button  id="registrar" onclick="ingresar()" type="button" name="button">Ingresar</button>
+          <p>¿Aún no tienes usuario? ¡Registrate!</p>
+          <button  id="registrar" onclick="registro()" type="button" name="button">Registrarse</button>
         </div>
       </div>
       <!-- /content -->
@@ -101,15 +113,82 @@
       <div class="ui-body ui-body-c">
         <img src="images/cachito.jpg" width="250" alt="">
         <p>
-          <strong> 1.) Reglas promociones </strong>
+          <strong>  Reglas de promociones </strong>
         </p>
         <p>
-          Politicas de promociones, restricciones etc...
+          TERMINOS Y CONDICIONES GENERALES SOBRE  CUPONES Y PROMOCIONES APP XELAPAN  <br>
+
+
+-          Valido únicamente para ser utilizado una vez al dia<br>
+
+-          Únicamente una promoción valida por factura<br>
+
+-          Valido únicamente en restaurantes donde aplica Servicio de cafetería (donde aplique el caso)<br>
+
+-          No es reembolsable por efectivo<br>
+
+-          Xelapan se reserva el derecho de cambiar o descontinuar cualquier cupon o promoción sin previo aviso<br>
+
+-          Ofertas sujetas a disponibilidad de producto<br>
+
+-          Imágenes con fines ilustrativos<br>
+
+-          Aplica restricciones<br>
+
+-           En casos especiales nos reservamos el derecho de resolución según corresponda para todo lo no expresado en este apartado.
         </p>
       </div>
     </div>
     <!-- /content -->
   </div>
+
+
+  <!-- Pagina de registro -->
+  <div data-role="page" id="reg">
+    <div data-role="header" data-id="bhead" data-theme="e">
+     <h1>Registro</h1>
+      <a href="#home" data-icon="home" data-direction="reverse" class="ui-btn-left jqm-home">Inicio</a>
+      <a href="#info" data-icon="info" class="ui-btn-right">Info</a>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <div class="ui-body ui-body-c">
+        <p  id="lnombre">Ingresa tu correo electronico</p>
+        <input id="correos" type="text"></input><br>
+        <p  id="lnombre">Ingresa tu usuario</p>
+        <input id="emailo" type="text"></input><br>
+
+        <p  id="lnombre">Ingresa tu contraseña</p>
+        <input id="contra" type="password"></input><br>
+        <button  id="registrar" onclick="registrar2()" type="button" name="button">¡Registrarse!</button>
+      </div>
+    </div>
+    <!-- /content -->
+  </div>
+
+  <!-- Start of info page -->
+  <div data-role="page" id="registro">
+    <div data-role="header" data-id="bhead" data-theme="e">
+     <h1>Informacion</h1>
+      <a href="#home" data-icon="home" data-direction="reverse" class="ui-btn-left jqm-home">Inicio</a>
+      <a href="#info" data-icon="info" class="ui-btn-right">Info</a>
+    </div>
+    <!-- /header -->
+    <div data-role="content">
+      <div class="ui-body ui-body-c">
+        <p  id="lnombre">Ingresa tu usuario</p>
+        <input id="email" type="text"></input><br>
+        <p  id="lcontrasena">Ingresa tu contraseña</p>
+        <input id="password" type="password"></input><br>
+        <button  id="registrar" onclick="registrar()" type="button" name="button">Ingresar</button>
+        <p>¿Aún no tienes usuario? ¡Registrate!</p>
+        <button  id="registrar" onclick="registrar()" type="button" name="button">Registrarse</button>
+      </div>
+    </div>
+    <!-- /content -->
+  </div>
+
+
   <div data-role="page" id="promo">
     <div data-role="header" data-id="bhead" data-theme="e">
      <h1>Promociones</h1>
@@ -126,7 +205,19 @@
         <p>
           Recibe gratis un pastelito en la compra de un almuerzo del día en cualquiera de nuestras tiendas
         </p>
-        <button type="button" name="button" onclick="mensaje();">Canejar Código</button>
+        <button type="button" id="myBtn" name="button" >Canejar Código</button>
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Open Modal</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+          </div>
+      </div>
       </div>
     </div>
     <div data-role="content">
@@ -138,7 +229,8 @@
         <p>
           Recibe gratis un pastelito en la compra de un almuerzo del día en cualquiera de nuestras tiendas
         </p>
-
+        <p id="anuncio">
+        </p>
         <button type="button" name="button" onclick="mensaje();">Canejar Código</button>
       </div>
     </div>

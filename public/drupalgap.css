@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Black+And+White+Picture|Lato');
+*{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
 #title {
   padding: 0 0 0 40px;
 }
@@ -65,7 +71,6 @@
   width: 200px;
 }
 
-
 #stitle,#storytext {
   width: 40px;
 }
@@ -92,6 +97,7 @@
 .field-content {
   padding: 5px 5px 5px 0px;
 }
+
 .activitylist div
 {
   float:left;

@@ -166,8 +166,9 @@ function pan(){
 	$.mobile.changePage("#pan");
 }
 
-function mensaje(){
-	alert("Hola");
+//
+function registro(){
+	$.mobile.changePage("#reg");
 }
 
 function clearData() {
